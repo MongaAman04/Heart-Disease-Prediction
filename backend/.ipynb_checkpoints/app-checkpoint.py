@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app, origins=["http://localhost:5173"])
 
 model = pickle.load(open(filename, 'rb'))
-# scaler = pickle.load(open('scaler.pkl', 'rb'))
+scaler = pickle.load(open('scaler.pkl', 'rb'))
 # @app.route('/')
 # def home():
 # 	return send_from_directory(app.static_folder, 'userINteraction.jsx')
@@ -49,7 +49,7 @@ def predict():
         data = np.array([values])
         # scaled_data = scaler.transform([values])
         # data = np.array(scaled_data)
-        prediction = model.predict(data).tolist()
+        prediction = model.predict(scaled_data).tolist()
         return jsonify({'message': "Data received successfully", 'prediction': prediction})
     except Exception as e:
         return jsonify({'message': "Error processing input", 'error': str(e)}), 400

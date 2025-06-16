@@ -1,7 +1,11 @@
 import axios from "axios";
 import { useState,useEffect } from "react"
-
+// import { Result } from "./result";
+import { NavLink } from "react-router"
+import { useNavigate } from "react-router-dom";
+import { Result } from "./result";
 export const UserInteraction = ()=>{
+  // const navigate = useNavigate();
     const [data , setData] = useState({
         age : "",
         sex : "",
@@ -53,20 +57,26 @@ export const UserInteraction = ()=>{
         },
       //  body: JSON.stringify(data),
       });
-        console.log(reponse.data.prediction);
+        setPridiction(reponse.data.prediction[0]);
+        console.log(prediction);
+        Result(prediction);
+        // navigate("/result", { state: { prediction: reponse.data.prediction } });
       } catch (error) {
         console.log(error);
         console.log(error.response);
-        
+        setPridiction("Error in prediction");
       }
   };
-  console.log();
-  
-    return (
-      <>
-      <form onSubmit={handleSubmit}> 
 
-      
+   return (
+    <div className="background h-full ">
+     
+      <form onSubmit={handleSubmit} > 
+        <div className="font-bold text-white  border-5 border-white rounded">
+
+        <div className="grid grid-cols-4 gap-6 p-10">
+
+        
         <label for="age">Age</label>
         <input type="text" id="age" name="age" placeholder="Your age.." value={data.age} onChange={handleChange}/>
 
@@ -159,16 +169,12 @@ export const UserInteraction = ()=>{
           <option value="1">Fixed Defect</option> 
           <option value="2">Reversible Defect</option>  
         </select>
-
-      
-
-      <input type="submit" class="my-cta-button" value="Predict"/>
+        </div>
+        <NavLink to="/result">
+      <button type="submit" className=" w-2xs h-10 bg-[#E9C2CC] ml-[38%] text-black mb-5 hover:scale-120 hover:transition-[5s] rounded-2xl">Predict</button>
+        </NavLink>
+        </div>
     </form>
-    <div>
-      <h1>{prediction}</h1>
     </div>
-      </>
-        
-
     )
 }

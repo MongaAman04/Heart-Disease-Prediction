@@ -53,3 +53,28 @@
         stroke-dashoffset: 0;
       }
     }
+    form input,select{
+      background-color: #fff;
+      color: black;
+      font-size: 15px;
+      width: 100%;
+      height: 40px;
+      border: 2px solid white;
+      border-radius: 10px;
+    }
+    .dead-pulse-line {
+  stroke: white;
+  stroke-width: 2;
+  fill: none;
+  animation: flicker 0.2s infinite;
+  z-index: -1;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.8;
+  }
+}
