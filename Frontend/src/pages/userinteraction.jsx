@@ -58,8 +58,9 @@ export const UserInteraction = ()=>{
       //  body: JSON.stringify(data),
       });
         setPridiction(reponse.data.prediction[0]);
-        console.log(prediction); 
-        Result(prediction);
+        console.log(reponse.data.prediction[0])
+        console.log(data);
+        // <Result prediction={prediction} data={data} />
         // navigate("/result", { state: { prediction: reponse.data.prediction } });
       } catch (error) {
         console.log(error);
@@ -67,7 +68,24 @@ export const UserInteraction = ()=>{
         setPridiction("Error in prediction");
       }
   };
-   return (
+  if (prediction == "1") {
+    if (data.fbs == "1" && data.thal != "1") {
+      return(
+        <div className="background h-[87vh] flex justify-center items-center text-white font-bold text-3xl relative">
+            <img className="absolute z-0 opacity-40 scale-125" src="src\images\realistic-heart-shape-studio 1.png" alt="" />
+           <h1 className="z-10 absolute">OOP's,Your heart is not fine, Consult a doctor.</h1>
+        </div>
+    )
+    }
+   return(
+        <div className="background h-[87vh] flex justify-center items-center text-white font-bold text-3xl relative">
+            <img className="absolute z-0 opacity-40 scale-125" src="src\images\realistic-heart-shape-studio 1.png" alt="" />
+           <h1 className="z-10 absolute">Hurrah,Your heart is totally fine, Take care of Heart like that.</h1>
+        </div>
+    )
+  }
+  
+  else return (
     <div className="background h-full ">
      
       <form onSubmit={handleSubmit} > 
@@ -169,9 +187,9 @@ export const UserInteraction = ()=>{
           <option value="2">Reversible Defect</option>  
         </select>
         </div>
-        <NavLink to="/result">
+        {/* <NavLink to="/result"> */}
       <button type="submit" className=" w-2xs h-10 bg-[#E9C2CC] ml-[38%] text-black mb-5 hover:scale-120 hover:transition-[5s] rounded-2xl">Predict</button>
-        </NavLink>
+        {/* </NavLink> */}
         </div>
     </form>
     </div>
