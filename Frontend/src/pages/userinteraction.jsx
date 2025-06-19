@@ -58,7 +58,7 @@ export const UserInteraction = ()=>{
       //  body: JSON.stringify(data),
       });
         setPridiction(reponse.data.prediction[0]);
-        console.log(prediction);
+        console.log(prediction); 
         Result(prediction);
         // navigate("/result", { state: { prediction: reponse.data.prediction } });
       } catch (error) {
@@ -67,7 +67,6 @@ export const UserInteraction = ()=>{
         setPridiction("Error in prediction");
       }
   };
-
    return (
     <div className="background h-full ">
      
