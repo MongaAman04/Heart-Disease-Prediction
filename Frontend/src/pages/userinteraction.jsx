@@ -68,19 +68,21 @@ export const UserInteraction = ()=>{
         setPridiction("Error in prediction");
       }
   };
+
+
   if (prediction == "1") {
-    if (data.fbs == "1" && data.thal != "1") {
-      return(
+    // if (data.fbs == "1") {
+    //   return(
+    //     <div className="background h-[87vh] flex justify-center items-center text-white font-bold text-3xl relative">
+    //         <img className="absolute z-0 opacity-40 scale-125" src="src\images\realistic-heart-shape-studio 1.png" alt="" />
+    //        <h1 className="z-10 absolute">OOP's,Your heart is not fine, Consult a doctor.</h1>
+    //     </div>
+    // )
+    // }
+  return(
         <div className="background h-[87vh] flex justify-center items-center text-white font-bold text-3xl relative">
             <img className="absolute z-0 opacity-40 scale-125" src="src\images\realistic-heart-shape-studio 1.png" alt="" />
-           <h1 className="z-10 absolute">OOP's,Your heart is not fine, Consult a doctor.</h1>
-        </div>
-    )
-    }
-   return(
-        <div className="background h-[87vh] flex justify-center items-center text-white font-bold text-3xl relative">
-            <img className="absolute z-0 opacity-40 scale-125" src="src\images\realistic-heart-shape-studio 1.png" alt="" />
-           <h1 className="z-10 absolute">Hurrah,Your heart is totally fine, Take care of Heart like that.</h1>
+           <h1 className="z-10 absolute">{data.fbs=="1"?"OOP's,Your heart is not fine, Consult a doctor.":"Hurrah,Your heart is totally fine, Take care of Heart like that."}</h1>
         </div>
     )
   }
