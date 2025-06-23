@@ -80,20 +80,20 @@ export const UserInteraction = ()=>{
     // )
     // }
   return(
-        <div className="background h-[87vh] flex justify-center items-center text-white font-bold text-3xl relative">
-            <img className="absolute z-0 opacity-40 scale-125" src="src\images\realistic-heart-shape-studio 1.png" alt="" />
+        <div className="background h-[87vh] flex justify-center items-center text-white font-bold text-xl md:text-3xl text-center px-4 relative">
+            <img className="absolute z-0 opacity-40 w-full h-auto object-contain max-w-[600px]" src="src/images/realistic-heart-shape-studio 1.png" alt="" />
            <h1 className="z-10 absolute">{data.fbs=="1"?"OOP's,Your heart is not fine, Consult a doctor.":"Hurrah,Your heart is totally fine, Take care of Heart like that."}</h1>
         </div>
     )
   }
   
   else return (
-    <div className="background h-full ">
+    <div className="background h-full px-4 py-6">
      
       <form onSubmit={handleSubmit} > 
         <div className="font-bold text-white  border-5 border-white rounded">
 
-        <div className="grid grid-cols-4 gap-6 p-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 md:p-10">
 
         
         <label for="age">Age</label>
@@ -190,7 +190,7 @@ export const UserInteraction = ()=>{
         </select>
         </div>
         {/* <NavLink to="/result"> */}
-      <button type="submit" className=" w-2xs h-10 bg-[#E9C2CC] ml-[38%] text-black mb-5 hover:scale-120 hover:transition-[5s] rounded-2xl">Predict</button>
+      <button type="submit" className=" w-40 h-10 bg-[#E9C2CC] mx-auto block text-black mb-5 hover:scale-105 transition-transform duration-300 rounded-2xl">Predict</button>
         {/* </NavLink> */}
         </div>
     </form>

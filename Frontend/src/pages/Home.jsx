@@ -15,10 +15,10 @@ export const Home = () => {
          L350,100 L360,90 L370,110 L380,100 
          L600,100" />
                     </svg>
-            <div className="flex z-1 absolute top-0 left-0 w-full mt-10 justify-between items-center">
-                <section className="w-[35%] h-[80%] flex flex-col justify-center items-start gap-7 pl-10 text-white z-1">
-                    <h1 className="text-3xl font-bold">Take Care of Your Heart Disease</h1>
-                    <p className="text-xl">It keeps running 24/7, non-stop, always by your side. Give a damn about your heart.</p>
+            <div className="flex flex-col md:flex-row z-1 absolute top-0 left-0 w-full mt-10 justify-between items-center px-4">
+                <section className="w-full md:w-[35%] h-auto md:h-[80%] flex flex-col justify-center items-start gap-4 md:gap-7 text-white">
+                    <h1 className="text-xl md:text-3xl font-bold">Take Care of Your Heart Disease</h1>
+                    <p className="md:text-xl text-base">It keeps running 24/7, non-stop, always by your side. Give a damn about your heart.</p>
                     <ul className="list-disc pl-5">
                         <li>Interactive 3D heart Model</li>
                         <li>Expert Heart health insights</li>
@@ -28,7 +28,7 @@ export const Home = () => {
                         <button className="bg-[#E9C2CC] w-36 h-10 rounded-2xl text-black font-bold">Check Yourself</button>
                     </NavLink>
                 </section>
-                <section className="w-[65%]">
+                <section className="w-full md:w-[65%] mt-6 md:mt-0">
                     <div className="w-[100%] h-[100%] flex justify-start items-center relative">
                         <img className="scale-150 mt-9" src="src\images\realistic-heart-shape-studio 1.png" alt="" />
                         <span className="w-40 h-32 box-background rounded-3xl text-center flex flex-col items-center justify-center absolute right-20 bottom-5 text-white font-bold gap-1">
